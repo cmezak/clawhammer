@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB0F670418D7BDE100051E74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0F670318D7BDE100051E74 /* Foundation.framework */; };
+		CB0F670918D7BDE100051E74 /* clawhammer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB0F670818D7BDE100051E74 /* clawhammer.h */; };
+		CB0F670B18D7BDE100051E74 /* clawhammer.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F670A18D7BDE100051E74 /* clawhammer.m */; };
+		CB0F671218D7BDE100051E74 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0F671118D7BDE100051E74 /* XCTest.framework */; };
+		CB0F671318D7BDE100051E74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0F670318D7BDE100051E74 /* Foundation.framework */; };
+		CB0F671518D7BDE100051E74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0F671418D7BDE100051E74 /* UIKit.framework */; };
+		CB0F671818D7BDE100051E74 /* libclawhammer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0F670018D7BDE100051E74 /* libclawhammer.a */; };
+		CB0F671E18D7BDE100051E74 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB0F671C18D7BDE100051E74 /* InfoPlist.strings */; };
+		CB0F672018D7BDE100051E74 /* clawhammerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F671F18D7BDE100051E74 /* clawhammerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB0F671618D7BDE100051E74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB0F66F818D7BDE100051E74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB0F66FF18D7BDE100051E74;
+			remoteInfo = clawhammer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB0F66FE18D7BDE100051E74 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				CB0F670918D7BDE100051E74 /* clawhammer.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CB0F670018D7BDE100051E74 /* libclawhammer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libclawhammer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB0F670318D7BDE100051E74 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CB0F670718D7BDE100051E74 /* clawhammer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "clawhammer-Prefix.pch"; sourceTree = "<group>"; };
+		CB0F670818D7BDE100051E74 /* clawhammer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clawhammer.h; sourceTree = "<group>"; };
+		CB0F670A18D7BDE100051E74 /* clawhammer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = clawhammer.m; sourceTree = "<group>"; };
+		CB0F671018D7BDE100051E74 /* clawhammerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clawhammerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB0F671118D7BDE100051E74 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CB0F671418D7BDE100051E74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		CB0F671B18D7BDE100051E74 /* clawhammerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "clawhammerTests-Info.plist"; sourceTree = "<group>"; };
+		CB0F671D18D7BDE100051E74 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB0F671F18D7BDE100051E74 /* clawhammerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = clawhammerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB0F66FD18D7BDE100051E74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB0F670418D7BDE100051E74 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB0F670D18D7BDE100051E74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB0F671218D7BDE100051E74 /* XCTest.framework in Frameworks */,
+				CB0F671518D7BDE100051E74 /* UIKit.framework in Frameworks */,
+				CB0F671818D7BDE100051E74 /* libclawhammer.a in Frameworks */,
+				CB0F671318D7BDE100051E74 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB0F66F718D7BDE100051E74 = {
+			isa = PBXGroup;
+			children = (
+				CB0F670518D7BDE100051E74 /* clawhammer */,
+				CB0F671918D7BDE100051E74 /* clawhammerTests */,
+				CB0F670218D7BDE100051E74 /* Frameworks */,
+				CB0F670118D7BDE100051E74 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB0F670118D7BDE100051E74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB0F670018D7BDE100051E74 /* libclawhammer.a */,
+				CB0F671018D7BDE100051E74 /* clawhammerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB0F670218D7BDE100051E74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB0F670318D7BDE100051E74 /* Foundation.framework */,
+				CB0F671118D7BDE100051E74 /* XCTest.framework */,
+				CB0F671418D7BDE100051E74 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB0F670518D7BDE100051E74 /* clawhammer */ = {
+			isa = PBXGroup;
+			children = (
+				CB0F670818D7BDE100051E74 /* clawhammer.h */,
+				CB0F670A18D7BDE100051E74 /* clawhammer.m */,
+				CB0F670618D7BDE100051E74 /* Supporting Files */,
+			);
+			path = clawhammer;
+			sourceTree = "<group>";
+		};
+		CB0F670618D7BDE100051E74 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB0F670718D7BDE100051E74 /* clawhammer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB0F671918D7BDE100051E74 /* clawhammerTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB0F671F18D7BDE100051E74 /* clawhammerTests.m */,
+				CB0F671A18D7BDE100051E74 /* Supporting Files */,
+			);
+			path = clawhammerTests;
+			sourceTree = "<group>";
+		};
+		CB0F671A18D7BDE100051E74 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB0F671B18D7BDE100051E74 /* clawhammerTests-Info.plist */,
+				CB0F671C18D7BDE100051E74 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB0F66FF18D7BDE100051E74 /* clawhammer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB0F672318D7BDE100051E74 /* Build configuration list for PBXNativeTarget "clawhammer" */;
+			buildPhases = (
+				CB0F66FC18D7BDE100051E74 /* Sources */,
+				CB0F66FD18D7BDE100051E74 /* Frameworks */,
+				CB0F66FE18D7BDE100051E74 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = clawhammer;
+			productName = clawhammer;
+			productReference = CB0F670018D7BDE100051E74 /* libclawhammer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CB0F670F18D7BDE100051E74 /* clawhammerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB0F672618D7BDE100051E74 /* Build configuration list for PBXNativeTarget "clawhammerTests" */;
+			buildPhases = (
+				CB0F670C18D7BDE100051E74 /* Sources */,
+				CB0F670D18D7BDE100051E74 /* Frameworks */,
+				CB0F670E18D7BDE100051E74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB0F671718D7BDE100051E74 /* PBXTargetDependency */,
+			);
+			name = clawhammerTests;
+			productName = clawhammerTests;
+			productReference = CB0F671018D7BDE100051E74 /* clawhammerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB0F66F818D7BDE100051E74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Charlie Mezak";
+			};
+			buildConfigurationList = CB0F66FB18D7BDE100051E74 /* Build configuration list for PBXProject "clawhammer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CB0F66F718D7BDE100051E74;
+			productRefGroup = CB0F670118D7BDE100051E74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB0F66FF18D7BDE100051E74 /* clawhammer */,
+				CB0F670F18D7BDE100051E74 /* clawhammerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB0F670E18D7BDE100051E74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB0F671E18D7BDE100051E74 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB0F66FC18D7BDE100051E74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB0F670B18D7BDE100051E74 /* clawhammer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB0F670C18D7BDE100051E74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB0F672018D7BDE100051E74 /* clawhammerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB0F671718D7BDE100051E74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB0F66FF18D7BDE100051E74 /* clawhammer */;
+			targetProxy = CB0F671618D7BDE100051E74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB0F671C18D7BDE100051E74 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB0F671D18D7BDE100051E74 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB0F672118D7BDE100051E74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CB0F672218D7BDE100051E74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB0F672418D7BDE100051E74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/clawhammer.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "clawhammer/clawhammer-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CB0F672518D7BDE100051E74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/clawhammer.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "clawhammer/clawhammer-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CB0F672718D7BDE100051E74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "clawhammer/clawhammer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "clawhammerTests/clawhammerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CB0F672818D7BDE100051E74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "clawhammer/clawhammer-Prefix.pch";
+				INFOPLIST_FILE = "clawhammerTests/clawhammerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB0F66FB18D7BDE100051E74 /* Build configuration list for PBXProject "clawhammer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB0F672118D7BDE100051E74 /* Debug */,
+				CB0F672218D7BDE100051E74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB0F672318D7BDE100051E74 /* Build configuration list for PBXNativeTarget "clawhammer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB0F672418D7BDE100051E74 /* Debug */,
+				CB0F672518D7BDE100051E74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CB0F672618D7BDE100051E74 /* Build configuration list for PBXNativeTarget "clawhammerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB0F672718D7BDE100051E74 /* Debug */,
+				CB0F672818D7BDE100051E74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB0F66F818D7BDE100051E74 /* Project object */;
+}
