@@ -37,6 +37,7 @@
 
     [self.detailDescriptionLabel registerforTweakWithName:@"labelFont" forKeyPath:@"font"];
     [self.detailDescriptionLabel registerforTweakWithName:@"labelText" forKeyPath:@"text"];
+    [self.detailDescriptionLabel registerforTweakWithName:@"labelTextColor" forKeyPath:@"textColor"];
     
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                     action:@selector(handleLabelTap:)];

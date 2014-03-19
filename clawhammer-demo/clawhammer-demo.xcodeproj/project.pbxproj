@@ -24,7 +24,7 @@
 		CB0F676518D7BFE000051E74 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB0F676318D7BFE000051E74 /* InfoPlist.strings */; };
 		CB0F676718D7BFE000051E74 /* clawhammer_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F676618D7BFE000051E74 /* clawhammer_demoTests.m */; };
 		CB876D1418D8D8DD000B4EDD /* libclawhammer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB876D1318D8D8DD000B4EDD /* libclawhammer.a */; };
-		CB876D1818D8DE1E000B4EDD /* clawhammer-demo-spec.json in Resources */ = {isa = PBXBuildFile; fileRef = CB876D1718D8DE1E000B4EDD /* clawhammer-demo-spec.json */; };
+		CB876D1818D8DE1E000B4EDD /* clawhammer.json in Resources */ = {isa = PBXBuildFile; fileRef = CB876D1718D8DE1E000B4EDD /* clawhammer.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,7 @@
 		CB0F676418D7BFE000051E74 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CB0F676618D7BFE000051E74 /* clawhammer_demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = clawhammer_demoTests.m; sourceTree = "<group>"; };
 		CB876D1318D8D8DD000B4EDD /* libclawhammer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libclawhammer.a; path = "../build/Debug-iphoneos/libclawhammer.a"; sourceTree = "<group>"; };
-		CB876D1718D8DE1E000B4EDD /* clawhammer-demo-spec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "clawhammer-demo-spec.json"; sourceTree = "<group>"; };
+		CB876D1718D8DE1E000B4EDD /* clawhammer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = clawhammer.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 				CB0F674E18D7BFE000051E74 /* MasterViewController.m */,
 				CB0F675018D7BFE000051E74 /* DetailViewController.h */,
 				CB0F675118D7BFE000051E74 /* DetailViewController.m */,
-				CB876D1718D8DE1E000B4EDD /* clawhammer-demo-spec.json */,
+				CB876D1718D8DE1E000B4EDD /* clawhammer.json */,
 				CB0F675318D7BFE000051E74 /* Images.xcassets */,
 				CB0F673C18D7BFE000051E74 /* Supporting Files */,
 			);
@@ -244,7 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0F674C18D7BFE000051E74 /* Main_iPad.storyboard in Resources */,
-				CB876D1818D8DE1E000B4EDD /* clawhammer-demo-spec.json in Resources */,
+				CB876D1818D8DE1E000B4EDD /* clawhammer.json in Resources */,
 				CB0F675418D7BFE000051E74 /* Images.xcassets in Resources */,
 				CB0F674918D7BFE000051E74 /* Main_iPhone.storyboard in Resources */,
 				CB0F674018D7BFE000051E74 /* InfoPlist.strings in Resources */,

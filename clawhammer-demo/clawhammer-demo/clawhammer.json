@@ -18,5 +18,10 @@
         "description": "The text shown in the label",
         "type": "string",
         "defaultValue": "Hey! Here's the text!"
+    },
+    "labelTextColor": {
+        "description": "The color of the text in the label",
+        "type": "color",
+        "defaultValue": "0,0,255"
     }
 }

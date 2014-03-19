@@ -38,6 +38,11 @@ static NSArray *AllDescriiptors;
     return SharedManager;
 }
 
++ (void)initialize
+{
+    [self setupWithSpecName:@"clawhammer"];
+}
+
 + (void)setupWithSpecName:(NSString *)specName
 {
     SpecName = specName;
