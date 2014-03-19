@@ -23,14 +23,4 @@
     return [NSString stringWithFormat:@"%@ : %@pt", [self.tweakValue familyName], @([self.tweakValue pointSize])];
 }
 
-- (CGFloat)minimumPointSize
-{
-    return 5.f;
-}
-
-- (CGFloat)maximumPointSize
-{
-    return 32.f;
-}
-
 @end

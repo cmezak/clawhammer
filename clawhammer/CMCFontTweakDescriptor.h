@@ -10,6 +10,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CMCFontTweakDescriptor : CMCTweakDescriptor
-@property (nonatomic) CGFloat minimumPointSize;
-@property (nonatomic) CGFloat maximumPointSize;
+@property (nonatomic) NSNumber *minimumPointSize;
+@property (nonatomic) NSNumber *maximumPointSize;
 @end

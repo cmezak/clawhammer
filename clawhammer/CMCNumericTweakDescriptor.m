@@ -14,14 +14,4 @@ NSString * const CMCNumericTweakPrecisionDouble = @"double";
 
 @implementation CMCNumericTweakDescriptor
 
-- (NSNumber *)minimumValue
-{
-    return @0.1;
-}
-
-- (NSNumber *)maximumValue
-{
-    return @10;
-}
-
 @end

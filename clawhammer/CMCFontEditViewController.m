@@ -58,7 +58,8 @@ static const CGFloat kSizeSliderHeight = 80.f;
     CGFloat kSliderHeight = 30.f;
     self.sizeSlider.frame = CGRectMake(0.f, CGRectGetMinY(self.tableView.frame) - kSliderHeight, CGRectGetWidth(self.view.bounds), kSliderHeight);
     [self.view addSubview:self.sizeSlider];
-    self.sizeSlider.value = ([self.tweakFont pointSize] - self.tweakDescriptor.minimumPointSize) / (self.tweakDescriptor.maximumPointSize - self.tweakDescriptor.minimumPointSize);
+    self.sizeSlider.hidden = !(self.tweakDescriptor.minimumPointSize && self.tweakDescriptor.maximumPointSize);
+    self.sizeSlider.value = ([self.tweakFont pointSize] - self.tweakDescriptor.minimumPointSize.floatValue) / (self.tweakDescriptor.maximumPointSize.floatValue - self.tweakDescriptor.minimumPointSize.floatValue);
     [self.sizeSlider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
     
     self.sizeLabel = [UILabel new];
@@ -100,13 +101,13 @@ static const CGFloat kSizeSliderHeight = 80.f;
 {
     [super setTweakDescriptor:tweakDescriptor];
     self.tweakFont = self.tweakDescriptor.tweakValue;
-    self.sizeSlider.value = ([self.tweakFont pointSize] - self.tweakDescriptor.minimumPointSize) / (self.tweakDescriptor.maximumPointSize - self.tweakDescriptor.minimumPointSize);
+    self.sizeSlider.value = ([self.tweakFont pointSize] - self.tweakDescriptor.minimumPointSize.floatValue) / (self.tweakDescriptor.maximumPointSize.floatValue - self.tweakDescriptor.minimumPointSize.floatValue);
     [self.tableView reloadData];
 }
 
 - (void)sliderChanged:(UISlider *)slider
 {
-    CGFloat pointsize = self.tweakDescriptor.minimumPointSize + (self.tweakDescriptor.maximumPointSize - self.tweakDescriptor.minimumPointSize) * slider.value;
+    CGFloat pointsize = self.tweakDescriptor.minimumPointSize.floatValue + (self.tweakDescriptor.maximumPointSize.floatValue - self.tweakDescriptor.minimumPointSize.floatValue) * slider.value;
     pointsize = floorf(pointsize);
     self.sizeLabel.text = [NSString stringWithFormat:@"%@pts", @(pointsize)];
     self.tweakFont = [UIFont fontWithName:self.tweakFont.fontName size:pointsize];
@@ -175,7 +176,7 @@ static const CGFloat kSizeSliderHeight = 80.f;
     NSArray *names = self.fontNamesByLetter[letter];
     NSString *fontName = names[indexPath.row];
     
-    CGFloat pointSize = self.tweakDescriptor.minimumPointSize + self.sizeSlider.value * (self.tweakDescriptor.maximumPointSize - self.tweakDescriptor.minimumPointSize);
+    CGFloat pointSize = self.tweakDescriptor.minimumPointSize.floatValue + self.sizeSlider.value * (self.tweakDescriptor.maximumPointSize.floatValue - self.tweakDescriptor.minimumPointSize.floatValue);
     self.tweakFont = [UIFont fontWithName:fontName size:pointSize];
     [self.tableView reloadData];
 }
