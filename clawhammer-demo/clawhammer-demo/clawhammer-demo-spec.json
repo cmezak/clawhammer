@@ -1,0 +1,22 @@
+{
+    "labelAnimationDuration": {
+        "description": "The duration of the animation that occurs when the user taps the label",
+        "defaultValue": 0.5,
+        "type": "number",
+        "minimumValue": 0.1,
+        "maximumValue": 5,
+        "precision": "double"
+    },
+    "labelFont": {
+        "description": "the font used in the label",
+        "type": "font",
+        "defaultValue": "HelveticaNeue-Light:18",
+        "minimumPointSize": 10,
+        "maximumPointSize": 40
+    },
+    "labelText": {
+        "description": "The text shown in the label",
+        "type": "string",
+        "defaultValue": "Hey! Here's the text!"
+    }
+}

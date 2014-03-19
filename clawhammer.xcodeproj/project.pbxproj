@@ -8,14 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		CB0F670418D7BDE100051E74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0F670318D7BDE100051E74 /* Foundation.framework */; };
-		CB0F670918D7BDE100051E74 /* clawhammer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB0F670818D7BDE100051E74 /* clawhammer.h */; };
-		CB0F670B18D7BDE100051E74 /* clawhammer.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F670A18D7BDE100051E74 /* clawhammer.m */; };
 		CB0F671218D7BDE100051E74 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0F671118D7BDE100051E74 /* XCTest.framework */; };
 		CB0F671318D7BDE100051E74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0F670318D7BDE100051E74 /* Foundation.framework */; };
 		CB0F671518D7BDE100051E74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0F671418D7BDE100051E74 /* UIKit.framework */; };
 		CB0F671818D7BDE100051E74 /* libclawhammer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0F670018D7BDE100051E74 /* libclawhammer.a */; };
 		CB0F671E18D7BDE100051E74 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB0F671C18D7BDE100051E74 /* InfoPlist.strings */; };
 		CB0F672018D7BDE100051E74 /* clawhammerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F671F18D7BDE100051E74 /* clawhammerTests.m */; };
+		CB16654518DA180E0072F5CA /* CMCFontEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB16654418DA180E0072F5CA /* CMCFontEditViewController.m */; };
+		CB16654818DA2B9A0072F5CA /* CMCNumericEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB16654718DA2B9A0072F5CA /* CMCNumericEditViewController.m */; };
+		CB16654B18DA35360072F5CA /* CMCColorEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB16654A18DA35360072F5CA /* CMCColorEditViewController.m */; };
+		CB29F35518D902DA00F37729 /* CMCStringEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29F35418D902DA00F37729 /* CMCStringEditViewController.m */; };
+		CB29F35818D9030400F37729 /* CMCEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29F35718D9030400F37729 /* CMCEditViewController.m */; };
+		CB29F35B18D909CF00F37729 /* CMCTweakDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29F35A18D909CF00F37729 /* CMCTweakDescriptor.m */; };
+		CB29F35E18D90A1300F37729 /* CMCNumericTweakDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29F35D18D90A1300F37729 /* CMCNumericTweakDescriptor.m */; };
+		CB29F36118D90A2600F37729 /* CMCFontTweakDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29F36018D90A2600F37729 /* CMCFontTweakDescriptor.m */; };
+		CB29F36418D90FD300F37729 /* CMCNumericTweakTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29F36318D90FD300F37729 /* CMCNumericTweakTableViewCell.m */; };
+		CB29F36718D90FDE00F37729 /* CMCFontTweakTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29F36618D90FDE00F37729 /* CMCFontTweakTableViewCell.m */; };
+		CB29F36A18D90FEA00F37729 /* CMCTweakTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29F36918D90FEA00F37729 /* CMCTweakTableViewCell.m */; };
+		CB29F36D18D9100400F37729 /* CMCStringTweakDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29F36C18D9100400F37729 /* CMCStringTweakDescriptor.m */; };
+		CB29F37018D9100D00F37729 /* CMCColorTweakDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29F36F18D9100D00F37729 /* CMCColorTweakDescriptor.m */; };
+		CB3FCF8018D8E23700A434DB /* CMCTweakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3FCF7F18D8E23700A434DB /* CMCTweakViewController.m */; };
+		CB3FCF8318D8F9F000A434DB /* NSObject+CMCTweaking.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3FCF8218D8F9F000A434DB /* NSObject+CMCTweaking.m */; };
+		CB876D1B18D8DE4F000B4EDD /* CMCTweakManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876D1A18D8DE4F000B4EDD /* CMCTweakManager.m */; };
+		CB876D1D18D8DE80000B4EDD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB876D1C18D8DE80000B4EDD /* CoreGraphics.framework */; };
+		CB876D1F18D8DECA000B4EDD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB876D1E18D8DECA000B4EDD /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +51,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				CB0F670918D7BDE100051E74 /* clawhammer.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,14 +60,46 @@
 		CB0F670018D7BDE100051E74 /* libclawhammer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libclawhammer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0F670318D7BDE100051E74 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB0F670718D7BDE100051E74 /* clawhammer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "clawhammer-Prefix.pch"; sourceTree = "<group>"; };
-		CB0F670818D7BDE100051E74 /* clawhammer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clawhammer.h; sourceTree = "<group>"; };
-		CB0F670A18D7BDE100051E74 /* clawhammer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = clawhammer.m; sourceTree = "<group>"; };
 		CB0F671018D7BDE100051E74 /* clawhammerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clawhammerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0F671118D7BDE100051E74 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CB0F671418D7BDE100051E74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB0F671B18D7BDE100051E74 /* clawhammerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "clawhammerTests-Info.plist"; sourceTree = "<group>"; };
 		CB0F671D18D7BDE100051E74 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CB0F671F18D7BDE100051E74 /* clawhammerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = clawhammerTests.m; sourceTree = "<group>"; };
+		CB16654318DA180E0072F5CA /* CMCFontEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCFontEditViewController.h; sourceTree = "<group>"; };
+		CB16654418DA180E0072F5CA /* CMCFontEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCFontEditViewController.m; sourceTree = "<group>"; };
+		CB16654618DA2B9A0072F5CA /* CMCNumericEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCNumericEditViewController.h; sourceTree = "<group>"; };
+		CB16654718DA2B9A0072F5CA /* CMCNumericEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCNumericEditViewController.m; sourceTree = "<group>"; };
+		CB16654918DA35360072F5CA /* CMCColorEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCColorEditViewController.h; sourceTree = "<group>"; };
+		CB16654A18DA35360072F5CA /* CMCColorEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCColorEditViewController.m; sourceTree = "<group>"; };
+		CB29F35318D902DA00F37729 /* CMCStringEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCStringEditViewController.h; sourceTree = "<group>"; };
+		CB29F35418D902DA00F37729 /* CMCStringEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCStringEditViewController.m; sourceTree = "<group>"; };
+		CB29F35618D9030400F37729 /* CMCEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCEditViewController.h; sourceTree = "<group>"; };
+		CB29F35718D9030400F37729 /* CMCEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCEditViewController.m; sourceTree = "<group>"; };
+		CB29F35918D909CF00F37729 /* CMCTweakDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCTweakDescriptor.h; sourceTree = "<group>"; };
+		CB29F35A18D909CF00F37729 /* CMCTweakDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCTweakDescriptor.m; sourceTree = "<group>"; };
+		CB29F35C18D90A1300F37729 /* CMCNumericTweakDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCNumericTweakDescriptor.h; sourceTree = "<group>"; };
+		CB29F35D18D90A1300F37729 /* CMCNumericTweakDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCNumericTweakDescriptor.m; sourceTree = "<group>"; };
+		CB29F35F18D90A2600F37729 /* CMCFontTweakDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCFontTweakDescriptor.h; sourceTree = "<group>"; };
+		CB29F36018D90A2600F37729 /* CMCFontTweakDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCFontTweakDescriptor.m; sourceTree = "<group>"; };
+		CB29F36218D90FD300F37729 /* CMCNumericTweakTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCNumericTweakTableViewCell.h; sourceTree = "<group>"; };
+		CB29F36318D90FD300F37729 /* CMCNumericTweakTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCNumericTweakTableViewCell.m; sourceTree = "<group>"; };
+		CB29F36518D90FDE00F37729 /* CMCFontTweakTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCFontTweakTableViewCell.h; sourceTree = "<group>"; };
+		CB29F36618D90FDE00F37729 /* CMCFontTweakTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCFontTweakTableViewCell.m; sourceTree = "<group>"; };
+		CB29F36818D90FEA00F37729 /* CMCTweakTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCTweakTableViewCell.h; sourceTree = "<group>"; };
+		CB29F36918D90FEA00F37729 /* CMCTweakTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCTweakTableViewCell.m; sourceTree = "<group>"; };
+		CB29F36B18D9100400F37729 /* CMCStringTweakDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCStringTweakDescriptor.h; sourceTree = "<group>"; };
+		CB29F36C18D9100400F37729 /* CMCStringTweakDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCStringTweakDescriptor.m; sourceTree = "<group>"; };
+		CB29F36E18D9100D00F37729 /* CMCColorTweakDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCColorTweakDescriptor.h; sourceTree = "<group>"; };
+		CB29F36F18D9100D00F37729 /* CMCColorTweakDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCColorTweakDescriptor.m; sourceTree = "<group>"; };
+		CB3FCF7E18D8E23700A434DB /* CMCTweakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCTweakViewController.h; sourceTree = "<group>"; };
+		CB3FCF7F18D8E23700A434DB /* CMCTweakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCTweakViewController.m; sourceTree = "<group>"; };
+		CB3FCF8118D8F9F000A434DB /* NSObject+CMCTweaking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CMCTweaking.h"; sourceTree = "<group>"; };
+		CB3FCF8218D8F9F000A434DB /* NSObject+CMCTweaking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CMCTweaking.m"; sourceTree = "<group>"; };
+		CB876D1918D8DE4F000B4EDD /* CMCTweakManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCTweakManager.h; sourceTree = "<group>"; };
+		CB876D1A18D8DE4F000B4EDD /* CMCTweakManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCTweakManager.m; sourceTree = "<group>"; };
+		CB876D1C18D8DE80000B4EDD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CB876D1E18D8DECA000B4EDD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB876D1F18D8DECA000B4EDD /* UIKit.framework in Frameworks */,
+				CB876D1D18D8DE80000B4EDD /* CoreGraphics.framework in Frameworks */,
 				CB0F670418D7BDE100051E74 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +149,8 @@
 		CB0F670218D7BDE100051E74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB876D1E18D8DECA000B4EDD /* UIKit.framework */,
+				CB876D1C18D8DE80000B4EDD /* CoreGraphics.framework */,
 				CB0F670318D7BDE100051E74 /* Foundation.framework */,
 				CB0F671118D7BDE100051E74 /* XCTest.framework */,
 				CB0F671418D7BDE100051E74 /* UIKit.framework */,
@@ -110,9 +161,18 @@
 		CB0F670518D7BDE100051E74 /* clawhammer */ = {
 			isa = PBXGroup;
 			children = (
-				CB0F670818D7BDE100051E74 /* clawhammer.h */,
-				CB0F670A18D7BDE100051E74 /* clawhammer.m */,
 				CB0F670618D7BDE100051E74 /* Supporting Files */,
+				CB876D1918D8DE4F000B4EDD /* CMCTweakManager.h */,
+				CB876D1A18D8DE4F000B4EDD /* CMCTweakManager.m */,
+				CB16654118DA096B0072F5CA /* Descriptors */,
+				CB16654218DA15640072F5CA /* View Controllers */,
+				CB29F36218D90FD300F37729 /* CMCNumericTweakTableViewCell.h */,
+				CB29F36318D90FD300F37729 /* CMCNumericTweakTableViewCell.m */,
+				CB29F36518D90FDE00F37729 /* CMCFontTweakTableViewCell.h */,
+				CB29F36618D90FDE00F37729 /* CMCFontTweakTableViewCell.m */,
+				CB29F36818D90FEA00F37729 /* CMCTweakTableViewCell.h */,
+				CB29F36918D90FEA00F37729 /* CMCTweakTableViewCell.m */,
+				CB3FCF8418D8FA8B00A434DB /* categories */,
 			);
 			path = clawhammer;
 			sourceTree = "<group>";
@@ -141,6 +201,51 @@
 				CB0F671C18D7BDE100051E74 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB16654118DA096B0072F5CA /* Descriptors */ = {
+			isa = PBXGroup;
+			children = (
+				CB29F35918D909CF00F37729 /* CMCTweakDescriptor.h */,
+				CB29F35A18D909CF00F37729 /* CMCTweakDescriptor.m */,
+				CB29F35C18D90A1300F37729 /* CMCNumericTweakDescriptor.h */,
+				CB29F35D18D90A1300F37729 /* CMCNumericTweakDescriptor.m */,
+				CB29F35F18D90A2600F37729 /* CMCFontTweakDescriptor.h */,
+				CB29F36018D90A2600F37729 /* CMCFontTweakDescriptor.m */,
+				CB29F36B18D9100400F37729 /* CMCStringTweakDescriptor.h */,
+				CB29F36C18D9100400F37729 /* CMCStringTweakDescriptor.m */,
+				CB29F36E18D9100D00F37729 /* CMCColorTweakDescriptor.h */,
+				CB29F36F18D9100D00F37729 /* CMCColorTweakDescriptor.m */,
+			);
+			name = Descriptors;
+			sourceTree = "<group>";
+		};
+		CB16654218DA15640072F5CA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CB3FCF7E18D8E23700A434DB /* CMCTweakViewController.h */,
+				CB3FCF7F18D8E23700A434DB /* CMCTweakViewController.m */,
+				CB29F35618D9030400F37729 /* CMCEditViewController.h */,
+				CB29F35718D9030400F37729 /* CMCEditViewController.m */,
+				CB29F35318D902DA00F37729 /* CMCStringEditViewController.h */,
+				CB29F35418D902DA00F37729 /* CMCStringEditViewController.m */,
+				CB16654918DA35360072F5CA /* CMCColorEditViewController.h */,
+				CB16654A18DA35360072F5CA /* CMCColorEditViewController.m */,
+				CB16654618DA2B9A0072F5CA /* CMCNumericEditViewController.h */,
+				CB16654718DA2B9A0072F5CA /* CMCNumericEditViewController.m */,
+				CB16654318DA180E0072F5CA /* CMCFontEditViewController.h */,
+				CB16654418DA180E0072F5CA /* CMCFontEditViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CB3FCF8418D8FA8B00A434DB /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				CB3FCF8118D8F9F000A434DB /* NSObject+CMCTweaking.h */,
+				CB3FCF8218D8F9F000A434DB /* NSObject+CMCTweaking.m */,
+			);
+			name = categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +329,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB0F670B18D7BDE100051E74 /* clawhammer.m in Sources */,
+				CB29F36118D90A2600F37729 /* CMCFontTweakDescriptor.m in Sources */,
+				CB29F36A18D90FEA00F37729 /* CMCTweakTableViewCell.m in Sources */,
+				CB29F36D18D9100400F37729 /* CMCStringTweakDescriptor.m in Sources */,
+				CB16654818DA2B9A0072F5CA /* CMCNumericEditViewController.m in Sources */,
+				CB3FCF8318D8F9F000A434DB /* NSObject+CMCTweaking.m in Sources */,
+				CB876D1B18D8DE4F000B4EDD /* CMCTweakManager.m in Sources */,
+				CB29F36718D90FDE00F37729 /* CMCFontTweakTableViewCell.m in Sources */,
+				CB29F37018D9100D00F37729 /* CMCColorTweakDescriptor.m in Sources */,
+				CB29F35E18D90A1300F37729 /* CMCNumericTweakDescriptor.m in Sources */,
+				CB29F35818D9030400F37729 /* CMCEditViewController.m in Sources */,
+				CB29F36418D90FD300F37729 /* CMCNumericTweakTableViewCell.m in Sources */,
+				CB3FCF8018D8E23700A434DB /* CMCTweakViewController.m in Sources */,
+				CB16654518DA180E0072F5CA /* CMCFontEditViewController.m in Sources */,
+				CB29F35518D902DA00F37729 /* CMCStringEditViewController.m in Sources */,
+				CB16654B18DA35360072F5CA /* CMCColorEditViewController.m in Sources */,
+				CB29F35B18D909CF00F37729 /* CMCTweakDescriptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +525,7 @@
 				CB0F672518D7BDE100051E74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB0F672618D7BDE100051E74 /* Build configuration list for PBXNativeTarget "clawhammerTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +534,7 @@
 				CB0F672818D7BDE100051E74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
