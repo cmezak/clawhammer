@@ -8,83 +8,302 @@
 
 #import "CMCColorEditViewController.h"
 
-static const NSInteger rgbControlIndex = 0;
-static const NSInteger hsbControlIndex = 1;
-static const NSInteger swatchControlIndex = 2;
+#import "CMCColorTweakDescriptor.h"
+#import "CMCTweakManager.h"
 
-@interface CMCColorEditViewController ()
+static const CGFloat kColorViewHeight = 50.f;
 
-@property (nonatomic, strong) UISegmentedControl *segmentedControl;
+@interface CMCColorEditViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-// rgb
-@property (nonatomic, strong) UIView *rgbContainerView;
-@property (nonatomic, strong) UITextField *redField;
-@property (nonatomic, strong) UITextField *blueField;
-@property (nonatomic, strong) UITextField *greenField;
-@property (nonatomic, strong) UITextField *rgbAlphaField;
-@property (nonatomic, strong) UISlider *redSlider;
-@property (nonatomic, strong) UISlider *greenSlider;
-@property (nonatomic, strong) UISlider *blueSlider;
-@property (nonatomic, strong) UISlider *rgbAlphaslider;
+@property (nonatomic, strong) NSArray *sliders;
+@property (nonatomic, strong) NSArray *fields;
 
-// hsb
-@property (nonatomic, strong) UIView *hsbContainerView;
-@property (nonatomic, strong) UITextField *hueField;
-@property (nonatomic, strong) UITextField *saturationField;
-@property (nonatomic, strong) UITextField *brightnessField;
-@property (nonatomic, strong) UITextField *hsbAlphaField;
-@property (nonatomic, strong) UISlider *hueSlider;
-@property (nonatomic, strong) UISlider *saturationSlider;
-@property (nonatomic, strong) UISlider *brightnessSlider;
-@property (nonatomic, strong) UISlider *hsbAlphaslider;
+@property (nonatomic, strong) NSArray *otherDescriptors;
 
-// swatches
-@property (nonatomic, strong) UICollectionView *swatchCollectionView;
+@property (nonatomic, strong) UIView *colorView;
+@property (nonatomic, strong) UISegmentedControl *colorModeControl;
+
+@property (nonatomic, strong) UIColor *color;
+
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
 @implementation CMCColorEditViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"rgb", @"hsb", @"swatches"]];
-    [self.segmentedControl addTarget:self action:@selector(segmentedControlChanged:) forControlEvents:UIControlEventValueChanged];
-    self.segmentedControl.selectedSegmentIndex = 0;
-    self.segmentedControl.frame = CGRectMake(0.f, CGRectGetHeight(self.navigationController.navigationBar.frame), CGRectGetWidth(self.view.bounds), 44.f);
-    [self.view addSubview:self.segmentedControl];
     
+    NSMutableArray *colorDescriptors = [[[CMCTweakManager sharedManager] colorDescriptors] mutableCopy];
+    [colorDescriptors removeObject:self.tweakDescriptor];
+    self.otherDescriptors = [colorDescriptors copy];
+    
+    NSMutableArray *sliders = [NSMutableArray new];
+    NSMutableArray *fields = [NSMutableArray new];
+    
+    CGFloat fieldWidth = 80.f;
+    
+    for (int i = 0; i < 4; i++)
+    {
+        UISlider *slider = [UISlider new];
+        slider.frame = CGRectMake(20.f, 0.f, CGRectGetWidth(self.view.bounds) - 40.f - fieldWidth, kColorViewHeight);
+        [sliders addObject:slider];
+        slider.tag = i;
+        [slider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
+    
+        UITextField *field = [UITextField new];
+        field.borderStyle = UITextBorderStyleRoundedRect;
+        field.frame = CGRectMake(CGRectGetMaxX(slider.frame) + 10.f, 10.f, fieldWidth - 20.f, kColorViewHeight - 20.f);
+        field.tag = i;
+        field.keyboardType = UIKeyboardTypeDecimalPad;
+        field.delegate = self;
+        [fields addObject:field];
+        
+    }
+    self.sliders = sliders;
+    self.fields = fields;
+    
+    self.colorModeControl = [[UISegmentedControl alloc] initWithItems:@[@"RGB", @"HSB"]];
+    self.colorModeControl.selectedSegmentIndex = 0;
+    [self.colorModeControl addTarget:self action:@selector(colorModeControlChanged:) forControlEvents:UIControlEventValueChanged];
+    self.colorModeControl.center = CGPointMake(CGRectGetMidX(self.view.bounds), kColorViewHeight * 0.5f);
+    
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"SliderCell"];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"ColorCell"];
+    [self.view addSubview:self.tableView];
+    
+    self.colorView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, CGRectGetWidth(self.view.bounds), kColorViewHeight)];
+    [self.tableView setTableHeaderView:self.colorView];
+    self.colorView.backgroundColor = self.color;
+    
+    self.colorMode = CMCColorModeRGB;
 }
 
-- (void)segmentedControlChanged:(UISegmentedControl *)control
+- (void)setTweakDescriptor:(CMCColorTweakDescriptor *)tweakDescriptor
 {
-    if (control.selectedSegmentIndex == rgbControlIndex)
+    self.color = tweakDescriptor.tweakValue;
+    [super setTweakDescriptor:tweakDescriptor];
+}
+
+- (void)setColor:(UIColor *)color
+{
+    _color = color;
+    self.colorView.backgroundColor = color;
+    
+    [self setSliderValuesForColor:NO];
+}
+
+- (void)setColorMode:(CMCColorMode)colorMode
+{
+    [self setColorMode:colorMode animated:NO];
+}
+
+- (void)setColorMode:(CMCColorMode)colorMode animated:(BOOL)animated
+{
+    _colorMode = colorMode;
+    [self setSliderValuesForColor:animated];
+
+}
+
+- (void)setSliderValuesForColor:(BOOL)animated
+{
+    if (self.colorMode == CMCColorModeRGB)
     {
-        self.rgbContainerView.hidden = NO;
-        self.swatchCollectionView.hidden = YES;
-        self.hsbContainerView.hidden = YES;
+        CGFloat red, green, blue, alpha;
+        [self.color getRed:&red green:&green blue:&blue alpha:&alpha];
+        [(UISlider *)self.sliders[0] setValue:red animated:animated];
+        [(UISlider *)self.sliders[1] setValue:green animated:animated];
+        [(UISlider *)self.sliders[2] setValue:blue animated:animated];
+        [(UISlider *)self.sliders[3] setValue:alpha animated:animated];
+        
+        [self.sliders[0] setMinimumTrackTintColor:[UIColor redColor]];
+        [self.sliders[1] setMinimumTrackTintColor:[UIColor greenColor]];
+        [self.sliders[2] setMinimumTrackTintColor:[UIColor blueColor]];
+        [self.sliders[3] setMinimumTrackTintColor:[UIColor lightGrayColor]];
+        
+        [(UITextField *)self.fields[0] setText:[NSString stringWithFormat:@"%d", (int)(255.f * red)]];
+        [(UITextField *)self.fields[1] setText:[NSString stringWithFormat:@"%d",(int)(255.f * green)]];
+        [(UITextField *)self.fields[2] setText:[NSString stringWithFormat:@"%d", (int)(255.f * blue)]];
+        [(UITextField *)self.fields[3] setText:[NSString stringWithFormat:@"%d", (int)(255.f * alpha)]];
     }
-    else if (control.selectedSegmentIndex == hsbControlIndex)
+    else
     {
-        self.rgbContainerView.hidden = YES;
-        self.swatchCollectionView.hidden = YES;
-        self.hsbContainerView.hidden = NO;
+        CGFloat hue, saturation, brightness, alpha;
+        [self.color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
+        
+        [(UISlider *)self.sliders[0] setValue:hue animated:animated];
+        [(UISlider *)self.sliders[1] setValue:saturation animated:animated];
+        [(UISlider *)self.sliders[2] setValue:brightness animated:animated];
+        [(UISlider *)self.sliders[3] setValue:alpha animated:animated];
+        
+        [(UITextField *)self.fields[0] setText:[NSString stringWithFormat:@"%d", (int)(255.f * hue)]];
+        [(UITextField *)self.fields[1] setText:[NSString stringWithFormat:@"%d",(int)(255.f * saturation)]];
+        [(UITextField *)self.fields[2] setText:[NSString stringWithFormat:@"%d", (int)(255.f * brightness)]];
+        [(UITextField *)self.fields[3] setText:[NSString stringWithFormat:@"%d", (int)(255.f * alpha)]];
     }
-    else if (control.selectedSegmentIndex == swatchControlIndex)
+}
+
+- (void)colorModeControlChanged:(UISegmentedControl *)control
+{
+    if (control.selectedSegmentIndex == 0) [self setColorMode:CMCColorModeRGB animated:YES];
+    else if (control.selectedSegmentIndex == 1) [self setColorMode:CMCColorModeHSB animated:YES];
+}
+
+- (void)sliderChanged:(UISlider *)slider
+{
+    
+    if (self.colorMode == CMCColorModeRGB)
     {
-        self.rgbContainerView.hidden = YES;
-        self.swatchCollectionView.hidden = NO;
-        self.hsbContainerView.hidden = YES;
+        CGFloat red, green, blue, alpha;
+        [self.color getRed:&red green:&green blue:&blue alpha:&alpha];
+        
+        switch (slider.tag) {
+            case 0:
+                red = slider.value;
+                break;
+            case 1:
+                green = slider.value;
+                break;
+            case 2:
+                blue = slider.value;
+                break;
+            case 3:
+                alpha = slider.value;
+                break;
+            default:
+                break;
+        }
+        
+        self.color = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
     }
+
+    else
+    {
+        CGFloat hue, saturation, brightness, alpha;
+        [self.color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
+        
+        switch (slider.tag) {
+            case 0:
+                hue = slider.value;
+                break;
+            case 1:
+                saturation = slider.value;
+                break;
+            case 2:
+                brightness = slider.value;
+                break;
+            case 3:
+                alpha = slider.value;
+                break;
+            default:
+                break;
+        }
+        
+        self.color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:alpha];
+    }
+}
+
+- (void)save:(id)sender
+{
+    self.tweakDescriptor.tweakValue = self.color;
+    [super save:sender];
+}
+
+#pragma mark UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        // mode + rgb/hsb + a
+        return 5;
+    }
+    else
+    {
+        return self.otherDescriptors.count;
+    }
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return kColorViewHeight;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (indexPath.section == 0)
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SliderCell"];
+        [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        if (indexPath.row == 0)
+            [cell.contentView addSubview:self.colorModeControl];
+        else
+        {
+            [cell.contentView addSubview:self.sliders[indexPath.row - 1]];
+            [cell.contentView addSubview:self.fields[indexPath.row - 1]];
+
+        }
+        return cell;
+    }
+    else
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ColorCell"];
+        CMCColorTweakDescriptor *descriptor = self.otherDescriptors[indexPath.row];
+        UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, 30.f, 30.f)];
+        colorView.backgroundColor = descriptor.tweakValue;
+        cell.accessoryView = colorView;
+        cell.textLabel.text = descriptor.tweakName;
+        return cell;
+    }
+
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1)
+    {
+        CMCColorTweakDescriptor *descriptor = self.otherDescriptors[indexPath.row];
+        self.color = descriptor.tweakValue;
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [textField setSelectedTextRange:[textField textRangeFromPosition:[textField beginningOfDocument]
+                                                          toPosition:[textField endOfDocument]]];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return NO;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    if (textField.text.floatValue > 255) textField.text = @"255";
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    CGFloat value = [textField.text floatValue];
+    
 }
 
 @end

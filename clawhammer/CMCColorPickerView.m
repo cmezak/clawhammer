@@ -12,6 +12,8 @@
 
 @interface CMCColorPickerView ()
 
+@property (nonatomic, strong) UISegmentedControl *colorModeControl;
+
 @property (nonatomic, strong) CMCColorSlider *topSlider;
 @property (nonatomic, strong) CMCColorSlider *middleSlider;
 @property (nonatomic, strong) CMCColorSlider *bottomSlider;
@@ -34,13 +36,25 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [self CMCColorPickerView_setup];
     }
     return self;
 }
 
+- (void)awakeFromNib
+{
+    [self CMCColorPickerView_setup];
+}
+
 - (void)CMCColorPickerView_setup
 {
+    
+    self.backgroundColor = [UIColor whiteColor];
+    
+    self.colorModeControl = [[UISegmentedControl alloc] initWithItems:@[@"RGB", @"HSB"]];
+    [self addSubview:self.colorModeControl];
+    [self.colorModeControl addTarget:self action:@selector(colorModeControlChanged:) forControlEvents:UIControlEventValueChanged];
+    
     self.topSlider = [CMCColorSlider new];
     self.middleSlider = [CMCColorSlider new];
     self.bottomSlider = [CMCColorSlider new];
@@ -96,6 +110,9 @@
 
 - (void)configureForColorMode
 {
+    
+    self.colorModeControl.selectedSegmentIndex = self.colorMode;
+    
     if (self.colorMode == CMCColorPickerViewModeHSB)
     {
         UIImage *hueImage = [self hueImageForSize:self.topSlider.frame.size];
@@ -108,6 +125,11 @@
     }
     
     [self configureForColor];
+}
+
+- (void)colorModeControlChanged:(UISegmentedControl *)control
+{
+    self.colorMode = control.selectedSegmentIndex;
 }
 
 - (void)configureForColor

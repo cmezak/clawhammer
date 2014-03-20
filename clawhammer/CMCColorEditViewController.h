@@ -8,6 +8,16 @@
 
 #import "CMCEditViewController.h"
 
+@class CMCColorTweakDescriptor;
+
+typedef enum {
+    CMCColorModeRGB,
+    CMCColorModeHSB,
+} CMCColorMode;
+
 @interface CMCColorEditViewController : CMCEditViewController
+
+@property (nonatomic, strong) CMCColorTweakDescriptor *tweakDescriptor;
+@property (nonatomic) CMCColorMode colorMode;
 
 @end

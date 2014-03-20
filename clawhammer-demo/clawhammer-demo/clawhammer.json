@@ -23,5 +23,10 @@
         "description": "The color of the text in the label",
         "type": "color",
         "defaultValue": "0,0,255"
+    },
+    "otherColor": {
+        "description": "The color of the text in the label",
+        "type": "color",
+        "defaultValue": "15,255,0"
     }
 }

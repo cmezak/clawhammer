@@ -11,8 +11,9 @@
 typedef void (^CMCColorPickerViewDidChangeBlock)(UIColor *color);
 
 typedef enum {
-    CMCColorPickerViewModeRGB,
-    CMCColorPickerViewModeHSB
+    CMCColorPickerViewModeRGB = 0,
+    CMCColorPickerViewModeHSB = 1,
+    kCMCColorPickerViewModeCount = 2
 } CMCColorPickerViewMode;
 
 @interface CMCColorPickerView : UIView
