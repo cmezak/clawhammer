@@ -12,10 +12,7 @@
 
 @implementation NSObject (CMCTweaking)
 
-#pragma clang diagnostic push
 
-// using a selector as an associated object key. don't care that it's not recognized
-#pragma clang diagnostic ignored "-Wundeclared-selector"
 
 - (void)registerForTweakWithName:(NSString *)tweakName responseBlock:(void(^)(id value))responseBlock
 {
@@ -40,7 +37,12 @@
     responseBlock([[CMCTweakManager sharedManager] valueForKey:tweakName]);
     
     // store the notification listener
+#pragma clang diagnostic push
+    // using a selector as an associated object key. don't care that it's not recognized
+#pragma clang diagnostic ignored "-Wundeclared-selector"
     objc_setAssociatedObject(self, @selector(tweakName), notificationListener, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+#pragma clang diagnostic pop
+
 }
 
 - (void)registerforTweakWithName:(NSString *)tweakName forKeyPath:(NSString *)keyPath
@@ -50,7 +52,6 @@
     }];
 }
 
-#pragma clang diagnostic pop
 
 
 @end
