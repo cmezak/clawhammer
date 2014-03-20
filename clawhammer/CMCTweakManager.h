@@ -25,7 +25,6 @@
 - (UIColor *)colorForKey:(NSString *)key;
 - (UIImage *)imageForKey:(NSString *)key;
 - (NSString *)stringForKey:(NSString *)key;
-
 - (NSArray *)colorDescriptors;
 
 /**

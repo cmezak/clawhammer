@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EA104299-627C-4323-97D0-64D91CE8B90D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>clawhammer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>60B80FE5-BDF3-4893-A1D4-F34F701605B0</key>
+		<string>https://github.com/cmezak/clawhammer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>clawhammer.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4E6F7E7C-3E58-43F0-91F5-537F79D4C21B</key>
+		<string>../clawhammer-demo</string>
+		<key>60B80FE5-BDF3-4893-A1D4-F34F701605B0</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cmezak/clawhammer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>60B80FE5-BDF3-4893-A1D4-F34F701605B0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>60B80FE5-BDF3-4893-A1D4-F34F701605B0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>clawhammer</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4E6F7E7C-3E58-43F0-91F5-537F79D4C21B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>clawhammer-demo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
