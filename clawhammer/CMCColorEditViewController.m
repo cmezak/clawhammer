@@ -235,6 +235,12 @@ static const CGFloat kColorViewHeight = 50.f;
 
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) return nil;
+    else return @"Other Tweaks";
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return kColorViewHeight;
@@ -290,19 +296,17 @@ static const CGFloat kColorViewHeight = 50.f;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    if (textField.text.floatValue > 255) textField.text = @"255";
     [textField resignFirstResponder];
     return NO;
 }
 
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
-{
-    if (textField.text.floatValue > 255) textField.text = @"255";
-    return YES;
-}
-
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    CGFloat value = [textField.text floatValue];
+    CGFloat value = [textField.text integerValue];
+    UISlider *slider = self.sliders[textField.tag];
+    [slider setValue:value / 255.f];
+    [self sliderChanged:slider];
     
 }
 
