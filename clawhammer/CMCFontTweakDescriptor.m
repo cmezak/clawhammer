@@ -23,4 +23,9 @@
     return [NSString stringWithFormat:@"%@ : %@pt", [self.tweakValue familyName], @([self.tweakValue pointSize])];
 }
 
+- (BOOL)allowsSizeTweaking
+{
+    return self.minimumPointSize && self.maximumPointSize;
+}
+
 @end

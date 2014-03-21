@@ -12,4 +12,6 @@
 @interface CMCFontTweakDescriptor : CMCTweakDescriptor
 @property (nonatomic) NSNumber *minimumPointSize;
 @property (nonatomic) NSNumber *maximumPointSize;
+@property (nonatomic, readonly) BOOL allowsSizeTweaking;
+@property (nonatomic, strong) UIFont *tweakValue;
 @end
